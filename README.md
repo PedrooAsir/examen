@@ -227,6 +227,9 @@ options {
 };
 
 
+Creamos la base de datos en la ruta "/var/lib/bind"
+
+
 Ponemos la máquina en adaptador puente (modo promiscuo) para poder hacer digs desde el host a una maquina y listo.
 
 ;; ANSWER SECTION:
