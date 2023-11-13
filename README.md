@@ -108,4 +108,21 @@ La respuesta que nos devuelve sería: "pedro.asircastelao.int"
 
 # 8.
 
+Necesitamos los volúmenes donde se pondrán en el fichero de docker-compose.yml. Ya que estos son archivos fuera del sistema de archivos
+del contenedor que guardan su configuración aunque se elimine o se detenga.
+
+- Ejemplo:
+
+volumes:
+- ./conf:/etc/bind
+- ./zonas:/var/lib/bind
+
+# 9.
+
+- www a la IP 172.16.0.1
+- owncloud sea un CNAME de www
+- un registro de texto con el contenido "1234ASDF"
+- Comprueba que todo funciona con el comando "dig"
+- Muestra en los logs que el servicio arranca correctamente
+
 
