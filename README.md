@@ -80,3 +80,8 @@ Podemos ver la informacion de la red junto a sus máquinas, básicamente.
 
 
 # 6.
+
+Su función es asignar puertos al contenedor, es decir, qué puertos tiene que usar el contenedor
+del docker compose.
+
+Ejemplo --> 8080:80 significa que el puerto 80 del contenedor se mapeará al puerto 8080.
