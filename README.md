@@ -27,7 +27,7 @@ docker network create \
 --gateway=55.28.5.254 \
 examen_subnet
 
-* EN EL DOCKER COMPOSE PONDREMOS *:
+* EN EL DOCKER COMPOSE PONDREMOS :
 
 services:
   bind9:
@@ -61,3 +61,22 @@ networks:
 
 
 # 4.
+
+Le añadiremos una dirección ipv4.
+
+* Ejemplo: 
+
+networks:
+      examen_subnet:
+        ipv4_address: 55.28.5.1
+
+# 5.
+
+Usariamos el comando: docker network inspect [nombre de la red] --> docker network inspect examen_subnet
+
+En la salida que nos de, ya podemos ver el apartado de cada contenedor, en nuestro caso el contenedor que funciona como servidor y el otro contenedor que funciona como cliente. 
+
+Podemos ver la informacion de la red junto a sus máquinas, básicamente.
+
+
+# 6.
