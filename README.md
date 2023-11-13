@@ -138,6 +138,15 @@ RESULTADO / RESPUESTA:
 ;; ANSWER SECTION:
 owncloud.tiendadeelectronica.int. 38400 IN CNAME www.tiendadeelectronica.int.
 
+Otro ejemplo conforme vemos que todo está correcto y funciona el dig:
+
+--> dig -t TXT @55.28.5.1 texto.tiendadeelectronica.int
+
+RESULTADO / RESPUESTA:
+
+;; ANSWER SECTION:
+texto.tiendadeelectronica.int. 38400 IN TXT     "1234ASDF"
+
 
 # 10.
 
