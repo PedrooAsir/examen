@@ -85,3 +85,20 @@ Su función es asignar puertos al contenedor, es decir, qué puertos tiene que u
 del docker compose.
 
 Ejemplo --> 8080:80 significa que el puerto 80 del contenedor se mapeará al puerto 8080.
+
+
+# 7.
+
+Redirecciona subdominios o asocia dominios con otro ya existente.
+
+- Por ejemplo:
+
+** Ejemplo de base de datos **:
+
+alias   CNAME   pedro
+
+pedro   IN A    55.28.5.1
+
+Si hay una base de datos y tenemos el dominio "pedro" con la IP 55.28.5.4 y un
+CNAME relacionandose o uniendose a ese dominio, al hacer la consulta dig al dominio (CNAME)
+nos devolverá el nombre del dominio al que está apuntando, osea en este caso el nombre.
