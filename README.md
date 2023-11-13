@@ -156,3 +156,4 @@ Para ver los *logs*, vamos al contenedor y le damos clic derecho y "View Logs". 
 
 # 10.
 
+Instalamos el bind9 con "apt install bind9" y continuamente lo comprobamos con "systemctl status bind9" donde tenemos que ver que esta en verde con "running"
