@@ -104,4 +104,8 @@ CNAME relacionandose o uniendose a ese dominio, al hacer la consulta dig al domi
 nos devolverá el nombre del dominio al que está apuntando, osea en este caso el nombre.
 
 --> Lo comprobaríamos con un dig:  dig CNAME @55.28.5.1 alias.asircastelao.int
-La respuesta que nos devuelve sería: pedro.asircastelao.int
+La respuesta que nos devuelve sería: "pedro.asircastelao.int"
+
+# 8.
+
+
