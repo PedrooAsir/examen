@@ -127,4 +127,11 @@ DNS que tenga:
 - Comprueba que todo funciona con el comando "dig"
 - Muestra en los logs que el servicio arranca correctamente
 
+Una vez configurada la base de datos y similar:
+
+COMPROBAMOS con un Dig, por ejemplo --> "dig @55.28.5.1 owncloud.tiendadeelectronica.int" por lo que nos devolvera:
+
+";; ANSWER SECTION:
+owncloud.tiendadeelectronica.int. 38400 IN CNAME www.tiendadeelectronica.int.
+www.tiendadeelectronica.int. 38400 IN   A       172.16.0.1"
 
