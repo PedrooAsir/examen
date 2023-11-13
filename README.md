@@ -26,3 +26,38 @@ docker network create \
 --ip-range=55.28.5.0/24 \
 --gateway=55.28.5.254 \
 examen_subnet
+
+* EN EL DOCKER COMPOSE PONDREMOS *:
+
+services:
+  bind9:
+    image: ubuntu/bind9
+    container_name: asir_bind9
+    ports:
+      - "53:53"
+    networks:
+      examen_subnet:
+        ipv4_address: 55.28.5.1
+    volumes:
+      - ./conf:/etc/bind
+      - ./zonas:/var/lib/bind
+    environment:
+      - TZ=Europe/Paris
+
+  cliente:
+    image: alpine
+    container_name: asir_cliente
+    tty: true
+    stdin_open: true
+    dns:
+      - 55.28.5.1
+    networks:
+      examen_subnet:
+        ipv4_address: 55.28.5.2
+
+networks:
+  examen_subnet:
+    external: true
+
+
+# 4.
