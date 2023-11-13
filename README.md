@@ -131,12 +131,13 @@ Una vez configurada la base de datos y similar:
 
 COMPROBAMOS con un Dig, por ejemplo:
 
--->dig @55.28.5.1 www.tiendadeelectronica.int
+--> dig CNAME @55.28.5.1 owncloud.tiendadeelectronica.int
 
 RESULTADO / RESPUESTA:
 
 ;; ANSWER SECTION:
-www.tiendadeelectronica.int. 38400 IN   A       172.16.0.1
+owncloud.tiendadeelectronica.int. 38400 IN CNAME www.tiendadeelectronica.int.
 
 
 # 10.
+
