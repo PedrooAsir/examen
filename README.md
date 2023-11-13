@@ -16,3 +16,4 @@ Si no se inician, como dije anteriormente, no podras entrar a la shell de estos.
 
 # 3.
 
+Primero de todo, debemos crear una red nueva. Continuamente, en el archivo docker-compose hay que asignarle esa red a los contenedores.
