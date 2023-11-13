@@ -227,5 +227,6 @@ options {
 };
 
 
-Ponemos la máquina en adaptador puente (modo promiscuo) para poder hacer digs de una maquina al host y listo.
+Ponemos la máquina en adaptador puente (modo promiscuo) para poder hacer digs desde el host a una maquina y listo.
+
 
