@@ -17,3 +17,12 @@ Si no se inician, como dije anteriormente, no podras entrar a la shell de estos.
 # 3.
 
 Primero de todo, debemos crear una red nueva. Continuamente, en el archivo docker-compose hay que asignarle esa red a los contenedores.
+
+- Para crear la red: 
+
+docker network create \
+--driver=bridge \
+--subnet=55.28.0.0/16 \
+--ip-range=55.28.5.0/24 \
+--gateway=55.28.5.254 \
+examen_subnet
