@@ -160,4 +160,72 @@ Instalamos el bind9 con "apt install bind9" y continuamente lo comprobamos con "
 
 Configuramos todos los archivos, docker compose, base de datos...etc.
 
+- named.conf:
+
+include "/etc/bind/named.conf.options";
+include "/etc/bind/named.conf.local";
+include "/etc/bind/named.conf.default-zones";
+
+- default-zones:
+
+// prime the server with knowledge of the root servers
+zone "." {
+	type hint;
+	file "/usr/share/dns/root.hints";
+};
+
+// be authoritative for the localhost forward and reverse zones, and for
+// broadcast zones as per RFC 1912
+
+zone "localhost" {
+	type master;
+	file "/etc/bind/db.local";
+};
+
+zone "127.in-addr.arpa" {
+	type master;
+	file "/etc/bind/db.127";
+};
+
+zone "0.in-addr.arpa" {
+	type master;
+	file "/etc/bind/db.0";
+};
+
+zone "255.in-addr.arpa" {
+	type master;
+	file "/etc/bind/db.255";
+};
+
+
+- named.conf.local:
+
+zone "ej10.int" {
+	type master;
+	file "/var/lib/bind/db.tiendadeelectronica.int";
+	allow-query {
+		any;
+		};
+	};
+
+- named.conf.options
+options {
+	directory "/var/cache/bind";
+
+	forwarders {
+	 	8.8.8.8;
+		1.1.1.1;
+	 };
+	 forward only;
+
+	listen-on { any; };
+	listen-on-v6 { any; };
+
+	allow-query {
+		any;
+	};
+};
+
+
 Ponemos la máquina en adaptador puente (modo promiscuo) para poder hacer digs de una maquina al host.
+
