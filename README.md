@@ -119,7 +119,7 @@ volumes:
 
 # 9.
 
-Zona DNS que tenga:
+DNS que tenga:
 
 - www a la IP 172.16.0.1
 - owncloud sea un CNAME de www
