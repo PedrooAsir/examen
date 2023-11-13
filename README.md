@@ -133,6 +133,8 @@ COMPROBAMOS con un Dig, por ejemplo:
 
 -->dig @55.28.5.1 www.tiendadeelectronica.int
 
+RESULTADO / RESPUESTA:
+
 ;; ANSWER SECTION:
 www.tiendadeelectronica.int. 38400 IN   A       172.16.0.1
 
