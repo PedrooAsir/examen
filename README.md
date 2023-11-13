@@ -129,7 +129,7 @@ DNS que tenga:
 
 Una vez configurada la base de datos y similar:
 
-COMPROBAMOS con un Dig, por ejemplo --> "dig @55.28.5.1 owncloud.tiendadeelectronica.int" por lo que nos devolvera:
+COMPROBAMOS con un Dig, por ejemplo --> "dig @55.28.5.1 owncloud.tiendadeelectronica.int" por lo que NOS DEVOLVERA:
 
 ";; ANSWER SECTION:
 owncloud.tiendadeelectronica.int. 38400 IN CNAME www.tiendadeelectronica.int.
