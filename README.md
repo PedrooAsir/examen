@@ -298,7 +298,25 @@ zone "tiendadeelectronica.int" {
 	  };
   };
 ```
-- Creamos la base de datos en la ruta "/var/lib/bind"
+**Creamos la base de datos en la ruta "/var/lib/bind"**
+
+```
+$TTL 38400	; 10 hours 40 minutes
+@		IN SOA	ns.tiendadeelectronica.int. some.email.address. (
+				10000002   ; serial
+				10800      ; refresh (3 hours)
+				3600       ; retry (1 hour)
+				604800     ; expire (1 week)
+				38400      ; minimum (10 hours 40 minutes)
+				)
+@		IN NS	ns.tiendadeelectronica.int.
+ns		IN NS 		172.16.0.2
+www		IN A  		172.16.0.1
+owncloud	IN CNAME	www
+texto	IN TXT		"1234ASDF"
+
+```
+
 
 
 - Ponemos la máquina en adaptador puente (modo promiscuo) para poder hacer digs desde el host a una maquina y listo.
