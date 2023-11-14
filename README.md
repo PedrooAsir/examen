@@ -12,7 +12,9 @@ Para abrir la shell a un contenedor tenemos varias formas:
 Tenemos que arrancarlos con un docker start [nombre del contenedor] para poder hacer dichas acciones.
 Ejemplo --> docker start servidor
 
-Si no se inician, como dije anteriormente, no podras entrar a la shell de estos.
+Cuando usas -it (docker exec **-it**) al ejecutar un contenedor, estás indicando a Docker que abra una sesión interactiva y que te permita interactuar directamente con la terminal del contenedor como si estuvieras trabajando en una máquina local.
+
+Si no se inician, como dije anteriormente, no podras entrar a la shell o terminal de estos.
 
 # 3.
 
