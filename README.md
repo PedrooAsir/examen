@@ -317,12 +317,9 @@ texto	IN TXT		"1234ASDF"
 
 ```
 
-
-
 - Ponemos la máquina en adaptador puente (modo promiscuo) para poder hacer digs desde el host a una maquina y listo.
 
-;; ANSWER SECTION:
-test.asircastelao.int  38400 IN  A  172.16.0.1
+
 
 Para comprobar los logs buscamos la ubicacion /var/log/auth.log:
 
