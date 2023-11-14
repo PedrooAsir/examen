@@ -129,26 +129,57 @@ DNS que tenga:
 
 Una vez configurada la base de datos y similar:
 
-COMPROBAMOS con un Dig, por ejemplo:
+- Dig CNAME:
 
---> dig CNAME @55.28.5.1 owncloud.tiendadeelectronica.int
+    dig CNAME @55.28.5.1 owncloud.tiendadeelectronica.int
 
-RESULTADO / RESPUESTA:
+  ; <<>> DiG 9.18.18-0ubuntu0.23.04.1-Ubuntu <<>> CNAME @172.16.0.1 owncloud.tiendadeelectronica.int
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 55194
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: a4e5ea54bba1b327010000006553909a2e6c9ba93e611f9f (good)
+;; QUESTION SECTION:
+;owncloud.tiendadeelectronica.int. IN   CNAME
 
 ;; ANSWER SECTION:
 owncloud.tiendadeelectronica.int. 38400 IN CNAME www.tiendadeelectronica.int.
 
-Otro ejemplo conforme vemos que todo está correcto y funciona el dig:
+;; Query time: 0 msec
+;; SERVER: 172.16.0.1#53(172.16.0.1) (UDP)
+;; WHEN: Tue Nov 14 16:22:02 CET 2023
+;; MSG SIZE  rcvd: 107
 
---> dig -t TXT @55.28.5.1 texto.tiendadeelectronica.int
+- Otro ejemplo con el registro TXT:
 
-RESULTADO / RESPUESTA:
+  dig -t TXT @172.16.0.1 texto.tiendadeelectronica.int
 
-;; ANSWER SECTION:
-texto.tiendadeelectronica.int. 38400 IN TXT     "1234ASDF"
+  ; <<>> DiG 9.18.18-0ubuntu0.23.04.1-Ubuntu <<>> -t TXT @172.16.0.1 texto.tiendadeelectronica.int
+  ; (1 server found)
+  ;; global options: +cmd
+  ;; Got answer:
+  ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 3031
+  ;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
+  ;; OPT PSEUDOSECTION:
+  ; EDNS: version: 0, flags:; udp: 1232
+  ; COOKIE: d1533f449e88615b01000000655390ea8a02f2eea0dd5a43 (good)
+  ;; QUESTION SECTION:
+  ;texto.tiendadeelectronica.int. IN      TXT
 
-Para ver los *logs*, vamos al contenedor y le damos clic derecho y "View Logs". Podemos ver que está TODO CORRECTO:
+  ;; ANSWER SECTION:
+  texto.tiendadeelectronica.int. 38400 IN TXT     "1234ASDF"
+
+  ;; Query time: 0 msec
+  ;; SERVER: 172.16.0.1#53(172.16.0.1) (UDP)
+  ;; WHEN: Tue Nov 14 16:23:22 CET 2023
+  ;; MSG SIZE  rcvd: 107
+
+- Para ver los *logs*, vamos al contenedor y le damos clic derecho y "View Logs". Podemos ver que está TODO CORRECTO:
 
 13-Nov-2023 16:59:58.446 all zones loaded
 13-Nov-2023 16:59:58.446 running
@@ -209,28 +240,29 @@ zone "ej10.int" {
 	};
 
 - named.conf.options
-options {
-	directory "/var/cache/bind";
 
-	forwarders {
-	 	8.8.8.8;
-		1.1.1.1;
-	 };
-	 forward only;
+  options {
+	  directory "/var/cache/bind";
 
-	listen-on { any; };
-	listen-on-v6 { any; };
+	  forwarders {
+	 	  8.8.8.8;
+		  1.1.1.1;
+	  };
+	  forward only;
 
-	allow-query {
-		any;
-	};
-};
+	  listen-on { any; };
+	  listen-on-v6 { any; };
 
-
-Creamos la base de datos en la ruta "/var/lib/bind"
+	  allow-query {
+		  any;
+	  };
+  };
 
 
-Ponemos la máquina en adaptador puente (modo promiscuo) para poder hacer digs desde el host a una maquina y listo.
+- Creamos la base de datos en la ruta "/var/lib/bind"
+
+
+- Ponemos la máquina en adaptador puente (modo promiscuo) para poder hacer digs desde el host a una maquina y listo.
 
 ;; ANSWER SECTION:
 test.asircastelao.int  38400 IN  A  172.16.0.1
