@@ -426,7 +426,7 @@ Nov  7 16:10:43 pedro-VirtualBox gdm-launch-environment]: pam_unix(gdm-launch-en
 Nov  7 16:10:43 pedro-VirtualBox systemd-logind[547]: New session c1 of user gdm.
 
 
-``````
+```
 
 
 
