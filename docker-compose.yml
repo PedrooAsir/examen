@@ -1,0 +1,29 @@
+services:
+  bind9:
+    image: ubuntu/bind9
+    container_name: asir_bind9_examen
+    ports:
+      - "53:53"
+    networks:
+      exameen_subnet:
+        ipv4_address: 172.16.0.1
+    volumes:
+      - ./conf:/etc/bind
+      - ./zonas:/var/lib/bind
+    environment:
+      - TZ=Europe/Paris
+
+  cliente:
+    image: alpine
+    container_name: asir_cliente_examen
+    tty: true
+    stdin_open: true
+    dns:
+      - 172.16.0.1
+    networks:
+      exameen_subnet:
+        ipv4_address: 172.16.0.2
+
+networks:
+  exameen_subnet:
+    external: true
