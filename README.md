@@ -225,7 +225,7 @@ Primero configuraremos los archivos de /etc/bind, poniendo y modificando los arc
 - Entramos en la Terminal y tendremos que ver la IP de nuestra máquina y comprobar que está con el puerto 53 (el determinado). Lo haremos con la siguiente herramienta → “netstat -ptan” para ver nuestra interfaz DNS (IP) que se creó con “adaptador puente” con el puerto 53 (es el determinado). Finalmente, ya solo hacemos dig @[Dicha IP]:
         dig -t TXT @10.0.9.49 texto.tiendadeelectronica.int (por ejemplo) . Nos debería devolver (o solucionar) la dirección IP que haya en nuestra base de datos con ese dominio.
 
-**Aqui tendremos la configuracion de los archivos**:
+**Aqui tendremos la configuracion de los archivos en "/etc/bind"**:
 
 - named.conf:
 ```
