@@ -260,13 +260,15 @@ zone "255.in-addr.arpa" {
 ```
 - named.conf.local:
 ```
-zone "ej10.int" {
+
+zone "tiendadeelectronica.int" {
 	type master;
 	file "/var/lib/bind/db.tiendadeelectronica.int";
 	allow-query {
 		any;
 		};
 	};
+
 ```
 
 ```
