@@ -129,6 +129,35 @@ DNS que tenga:
 
 Una vez configurada la base de datos y similar:
 
+- En primer lugar comprobamos www.tiendadeelectronica.int:
+
+```  
+
+  dig @172.16.0.1 www.tiendadeelectronica.int
+
+; <<>> DiG 9.18.18-0ubuntu0.23.04.1-Ubuntu <<>> @172.16.0.1 www.tiendadeelectronica.int
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 10862
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 794a73974ac946e6010000006553928a9fcfbe0b17fc3e7d (good)
+;; QUESTION SECTION:
+;www.tiendadeelectronica.int.   IN      A
+
+;; ANSWER SECTION:
+www.tiendadeelectronica.int. 38400 IN   A       172.16.0.1
+
+;; Query time: 0 msec
+;; SERVER: 172.16.0.1#53(172.16.0.1) (UDP)
+;; WHEN: Tue Nov 14 16:30:18 CET 2023
+;; MSG SIZE  rcvd: 100
+
+```
+
 - Dig CNAME:
 ```
     dig CNAME @55.28.5.1 owncloud.tiendadeelectronica.int
