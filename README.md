@@ -130,7 +130,7 @@ DNS que tenga:
 Una vez configurada la base de datos y similar:
 
 - Dig CNAME:
-
+```
     dig CNAME @55.28.5.1 owncloud.tiendadeelectronica.int
 
   ; <<>> DiG 9.18.18-0ubuntu0.23.04.1-Ubuntu <<>> CNAME @172.16.0.1 owncloud.tiendadeelectronica.int
@@ -153,7 +153,7 @@ owncloud.tiendadeelectronica.int. 38400 IN CNAME www.tiendadeelectronica.int.
 ;; SERVER: 172.16.0.1#53(172.16.0.1) (UDP)
 ;; WHEN: Tue Nov 14 16:22:02 CET 2023
 ;; MSG SIZE  rcvd: 107
-
+```
 - Otro ejemplo con el registro TXT:
 ```
   - dig -t TXT @172.16.0.1 texto.tiendadeelectronica.int
