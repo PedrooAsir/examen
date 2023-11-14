@@ -270,7 +270,7 @@ zone "ej10.int" {
 ```
 
 ```
-- named.conf.options
+- named.conf.optionss
 
   options {
 	  directory "/var/cache/bind";
