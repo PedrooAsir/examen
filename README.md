@@ -270,7 +270,7 @@ zone "ej10.int" {
 ```
 
 ```
-- named.conf.optionss
+- named.conf.options
 
   options {
 	  directory "/var/cache/bind";
@@ -288,7 +288,6 @@ zone "ej10.int" {
 		  any;
 	  };
   };
-  
 ```
 - Creamos la base de datos en la ruta "/var/lib/bind"
 
