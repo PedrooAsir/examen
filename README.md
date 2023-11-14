@@ -354,7 +354,7 @@ www.tiendadeelectronica.int. 38400 IN	A	172.16.0.1
 ;; MSG SIZE  rcvd: 100
 
 ```
-- __Comprobación del registro TXT__:
+  __Comprobación del registro TXT__:
 
 ```
 dig -t TXT @10.0.9.149 texto.tiendadeelectronica.int
@@ -382,7 +382,7 @@ texto.tiendadeelectronica.int. 38400 IN	TXT	"1234ASDF"
 
 ```
 
-- __Comprobación del registro CNAME__:
+  __Comprobación del registro CNAME__:
 
 ```
 
