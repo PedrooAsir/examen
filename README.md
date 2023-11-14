@@ -185,7 +185,7 @@ owncloud.tiendadeelectronica.int. 38400 IN CNAME www.tiendadeelectronica.int.
 ;; WHEN: Tue Nov 14 16:22:02 CET 2023
 ;; MSG SIZE  rcvd: 107
 ```
-- **Otro ejemplo con el registro TXT**:
+- __**Otro ejemplo con el registro TXT**__:
 ```
   - dig -t TXT @172.16.0.1 texto.tiendadeelectronica.int
 
@@ -412,7 +412,7 @@ owncloud.tiendadeelectronica.int. 38400	IN CNAME www.tiendadeelectronica.int.
 ```
 
 
-**COMPROBACION DE LOGS**
+**__COMPROBACION DE LOGS__**
 
  - Para ver o comprobar los logs buscamos la ubicacion _/var/log/auth.log_:
 
