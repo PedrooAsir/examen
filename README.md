@@ -216,9 +216,14 @@ owncloud.tiendadeelectronica.int. 38400 IN CNAME www.tiendadeelectronica.int.
 
 # 10.
 
-Instalamos el bind9 con "apt install bind9" y continuamente lo comprobamos con "systemctl status bind9" donde tenemos que ver que esta en verde con "running"
+- Instalamos el bind9 con "apt install bind9" y continuamente lo comprobamos con "systemctl status bind9" donde tenemos que ver que esta en verde con "running"
 
-Configuramos todos los archivos, docker compose, base de datos...etc.
+- Ahora procedemos a configurar los archivos creados en /etc/bind y /var/lib/bind (No nos olvidemos de poner mismas IP y red tanto en la máquina como en el host). 
+Primero configuraremos los archivos de /etc/bind, poniendo y modificando los archivos de configuración. Después iremos a /var/lib/bind y tendremos que crear la base de datos (si todo se ha hecho bien, la carpeta de dicha ruta de bind debería estar vacía). Después de hacer esto, ponemos la máquina en adaptador puente por ejemplo en Modo Promiscuo para que otras máquinas puedan detectarla o hacer (en nuestro caso), Digs. 
+
+
+- Entramos en la Terminal y tendremos que ver la IP de nuestra máquina y comprobar que está con el puerto 53 (el determinado). Lo haremos con la siguiente herramienta → “netstat -ptan” para ver nuestra interfaz DNS (IP) que se creó con “adaptador puente” con el puerto 53 (es el determinado). Finalmente, ya solo hacemos dig @[Dicha IP] test.asircastelao.int (por ejemplo) y nos debería devolver (o solucionar) la dirección IP que haya en nuestra base de datos con ese dominio.
+
 
 - named.conf:
 ```
