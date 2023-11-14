@@ -380,6 +380,35 @@ texto.tiendadeelectronica.int. 38400 IN	TXT	"1234ASDF"
 
 ```
 
+- __Comprobación del registro CNAME__:
+
+```
+
+dig CNAME @10.0.9.149 owncloud.tiendadeelectronica.int
+
+; <<>> DiG 9.18.18-0ubuntu0.22.04.1-Ubuntu <<>> CNAME @10.0.9.149 owncloud.tiendadeelectronica.int
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 63155
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: e2ccd38fb189dc64010000006553ab5091d9ef83c527aa69 (good)
+;; QUESTION SECTION:
+;owncloud.tiendadeelectronica.int. IN	CNAME
+
+;; ANSWER SECTION:
+owncloud.tiendadeelectronica.int. 38400	IN CNAME www.tiendadeelectronica.int.
+
+;; Query time: 0 msec
+;; SERVER: 10.0.9.149#53(10.0.9.149) (UDP)
+;; WHEN: Tue Nov 14 18:16:00 CET 2023
+;; MSG SIZE  rcvd: 107
+
+```
+
  - Para comprobar los logs buscamos la ubicacion /var/log/auth.log:
 
 Nov  7 16:10:42 pedro-VirtualBox systemd-logind[547]: New seat seat0.
