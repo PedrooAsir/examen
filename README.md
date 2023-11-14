@@ -326,7 +326,7 @@ Ponemos la máquina en adaptador puente (modo promiscuo) para poder hacer digs d
 
 **DIGS**
 
-- __Comprobación de www.tiendadeelectronica.int__:
+- _Comprobación de www.tiendadeelectronica.int_:
 
 ```
 
@@ -354,7 +354,7 @@ www.tiendadeelectronica.int. 38400 IN	A	172.16.0.1
 ;; MSG SIZE  rcvd: 100
 
 ```
- -  __Comprobación del registro TXT__:
+ -  _Comprobación del registro TXT_:
 
 ```
 dig -t TXT @10.0.9.149 texto.tiendadeelectronica.int
@@ -382,7 +382,7 @@ texto.tiendadeelectronica.int. 38400 IN	TXT	"1234ASDF"
 
 ```
 
-  - __Comprobación del registro CNAME__:
+  - _Comprobación del registro CNAME_:
 
 ```
 
@@ -412,7 +412,7 @@ owncloud.tiendadeelectronica.int. 38400	IN CNAME www.tiendadeelectronica.int.
 ```
 
 
-- **__COMPROBACION DE LOGS__**
+- *COMPROBACION DE LOGS*
 
  - Para ver o comprobar los logs buscamos la ubicacion _/var/log/auth.log_:
 
