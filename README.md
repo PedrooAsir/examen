@@ -414,7 +414,7 @@ owncloud.tiendadeelectronica.int. 38400	IN CNAME www.tiendadeelectronica.int.
 
 - *COMPROBACION DE LOGS*
 
- - Para ver o comprobar los logs buscamos la ubicacion _/var/log/auth.log_:
+ Para ver o comprobar los logs buscamos la ubicacion _/var/log/auth.log_:
 
  ```
 
