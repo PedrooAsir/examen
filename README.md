@@ -221,13 +221,13 @@ Instalamos el bind9 con "apt install bind9" y continuamente lo comprobamos con "
 Configuramos todos los archivos, docker compose, base de datos...etc.
 
 - named.conf:
-
+```
 include "/etc/bind/named.conf.options";
 include "/etc/bind/named.conf.local";
 include "/etc/bind/named.conf.default-zones";
-
+```
 - default-zones:
-
+```
 // prime the server with knowledge of the root servers
 zone "." {
 	type hint;
@@ -257,9 +257,9 @@ zone "255.in-addr.arpa" {
 	file "/etc/bind/db.255";
 };
 
-
+```
 - named.conf.local:
-
+```
 zone "ej10.int" {
 	type master;
 	file "/var/lib/bind/db.tiendadeelectronica.int";
@@ -286,8 +286,8 @@ zone "ej10.int" {
 		  any;
 	  };
   };
-
-
+  
+```
 - Creamos la base de datos en la ruta "/var/lib/bind"
 
 
