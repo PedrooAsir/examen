@@ -212,9 +212,11 @@ owncloud.tiendadeelectronica.int. 38400 IN CNAME www.tiendadeelectronica.int.
 ```
 - Para ver los *logs*, vamos al contenedor y le damos clic derecho y "View Logs". Podemos ver que está TODO CORRECTO:
 
+```
 13-Nov-2023 16:59:58.446 all zones loaded
 13-Nov-2023 16:59:58.446 running
 13-Nov-2023 16:59:58.490 managed-keys-zone: Key 20326 for zone . is now trusted (acceptance timer complete)
+```
 
 # 10.
 
