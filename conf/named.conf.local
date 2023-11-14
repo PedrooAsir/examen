@@ -1,6 +1,6 @@
 zone "tiendadeelectronica.int" {
 	type master;
-	file "/var/lib/bind/db.ej10.int";
+	file "/var/lib/bind/db.tiendadeelectronica.int";
 	allow-query {
 		any;
 		};
