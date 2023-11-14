@@ -158,7 +158,7 @@ www.tiendadeelectronica.int. 38400 IN   A       172.16.0.1
 
 ```
 
-- Dig CNAME:
+- **Dig CNAME**:
 ```
     dig CNAME @55.28.5.1 owncloud.tiendadeelectronica.int
 
@@ -183,7 +183,7 @@ owncloud.tiendadeelectronica.int. 38400 IN CNAME www.tiendadeelectronica.int.
 ;; WHEN: Tue Nov 14 16:22:02 CET 2023
 ;; MSG SIZE  rcvd: 107
 ```
-- Otro ejemplo con el registro TXT:
+- **Otro ejemplo con el registro TXT**:
 ```
   - dig -t TXT @172.16.0.1 texto.tiendadeelectronica.int
 
@@ -225,6 +225,7 @@ Primero configuraremos los archivos de /etc/bind, poniendo y modificando los arc
 - Entramos en la Terminal y tendremos que ver la IP de nuestra máquina y comprobar que está con el puerto 53 (el determinado). Lo haremos con la siguiente herramienta → “netstat -ptan” para ver nuestra interfaz DNS (IP) que se creó con “adaptador puente” con el puerto 53 (es el determinado). Finalmente, ya solo hacemos dig @[Dicha IP]:
         dig -t TXT @10.0.9.49 texto.tiendadeelectronica.int (por ejemplo) . Nos debería devolver (o solucionar) la dirección IP que haya en nuestra base de datos con ese dominio.
 
+- **Aqui tendremos la configuracion de los archivos**:
 
 - named.conf:
 ```
