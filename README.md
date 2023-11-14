@@ -155,8 +155,8 @@ owncloud.tiendadeelectronica.int. 38400 IN CNAME www.tiendadeelectronica.int.
 ;; MSG SIZE  rcvd: 107
 
 - Otro ejemplo con el registro TXT:
-
-  dig -t TXT @172.16.0.1 texto.tiendadeelectronica.int
+```
+  - dig -t TXT @172.16.0.1 texto.tiendadeelectronica.int
 
   ; <<>> DiG 9.18.18-0ubuntu0.23.04.1-Ubuntu <<>> -t TXT @172.16.0.1 texto.tiendadeelectronica.int
   ; (1 server found)
@@ -178,7 +178,7 @@ owncloud.tiendadeelectronica.int. 38400 IN CNAME www.tiendadeelectronica.int.
   ;; SERVER: 172.16.0.1#53(172.16.0.1) (UDP)
   ;; WHEN: Tue Nov 14 16:23:22 CET 2023
   ;; MSG SIZE  rcvd: 107
-
+```
 - Para ver los *logs*, vamos al contenedor y le damos clic derecho y "View Logs". Podemos ver que está TODO CORRECTO:
 
 13-Nov-2023 16:59:58.446 all zones loaded
