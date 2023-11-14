@@ -267,7 +267,9 @@ zone "ej10.int" {
 		any;
 		};
 	};
+```
 
+```
 - named.conf.options
 
   options {
