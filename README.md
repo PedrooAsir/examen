@@ -317,11 +317,70 @@ texto	IN TXT		"1234ASDF"
 
 ```
 
-- Ponemos la máquina en adaptador puente (modo promiscuo) para poder hacer digs desde el host a una maquina y listo.
+**UNA VEZ CONFIGURADO, REINICIAMOS PARA APLICAR LOS CAMBIOS**
+
+Ponemos la máquina en adaptador puente (modo promiscuo) para poder hacer digs desde el host a una maquina y listo.
 
 
+**DIGS**
 
-Para comprobar los logs buscamos la ubicacion /var/log/auth.log:
+- __Comprobación de www.tiendadeelectronica.int__:
+
+```
+
+dig @10.0.9.149 www.tiendadeelectronica.int
+
+; <<>> DiG 9.18.18-0ubuntu0.22.04.1-Ubuntu <<>> @10.0.9.149 www.tiendadeelectronica.int
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 64171
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: e2e5037ecdb04d05010000006553a9c9d368c889d89b5833 (good)
+;; QUESTION SECTION:
+;www.tiendadeelectronica.int.	IN	A
+
+;; ANSWER SECTION:
+www.tiendadeelectronica.int. 38400 IN	A	172.16.0.1
+
+;; Query time: 0 msec
+;; SERVER: 10.0.9.149#53(10.0.9.149) (UDP)
+;; WHEN: Tue Nov 14 18:09:29 CET 2023
+;; MSG SIZE  rcvd: 100
+
+```
+- __Comprobación del registro TXT__:
+
+```
+dig -t TXT @10.0.9.149 texto.tiendadeelectronica.int
+
+; <<>> DiG 9.18.18-0ubuntu0.22.04.1-Ubuntu <<>> -t TXT @10.0.9.149 texto.tiendadeelectronica.int
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 40474
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 0e28bfdc2962537f010000006553aaa4941afa6833672268 (good)
+;; QUESTION SECTION:
+;texto.tiendadeelectronica.int.	IN	TXT
+
+;; ANSWER SECTION:
+texto.tiendadeelectronica.int. 38400 IN	TXT	"1234ASDF"
+
+;; Query time: 4 msec
+;; SERVER: 10.0.9.149#53(10.0.9.149) (UDP)
+;; WHEN: Tue Nov 14 18:13:08 CET 2023
+;; MSG SIZE  rcvd: 107
+
+```
+
+ - Para comprobar los logs buscamos la ubicacion /var/log/auth.log:
 
 Nov  7 16:10:42 pedro-VirtualBox systemd-logind[547]: New seat seat0.
 Nov  7 16:10:42 pedro-VirtualBox systemd-logind[547]: Watching system buttons on /dev/input/event0 (Power Button)
